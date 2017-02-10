@@ -246,3 +246,6 @@ string xs[31];
 //: Do with this what we did with fma
 long stimeZ;
 #define stime stimeZ
+
+//Steyk's part now
+int complete = 0, doublefps = 0, doublefile = 0;

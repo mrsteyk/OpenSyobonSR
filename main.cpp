@@ -1,3 +1,4 @@
+#include <iostream>
 #include "main.h"
 
 // プログラムは WinMain から始まります
@@ -1093,6 +1094,8 @@ void rpaint()
 //Showing lives
     if (mainZ == 10) {
 
+    complete = 0;
+
     setc0();
     FillScreen();
 
@@ -1430,6 +1433,10 @@ if (mc>=800 || mc<=-800){md=-1800;}
         mtm = 0;
         mkeytm = 0;
         nokori--;
+        if (sta == 1 && stb == 1 && complete == 1)
+            std::cout << "0\n";
+        if (sta == 1 && stb == 3 && complete == 1)
+            std::cout << "0\n";
         if (fast == 1)
             mtype = 0;
         }           //mtm>=100
@@ -2772,6 +2779,8 @@ if (mtm==250)end();
                 mtype = 300;
                 mtm = 0;
                 ma = sa[t] - fx - 2000;
+                std::cout << "1";
+                complete = 1;
                 ot(oto[11]);
             }
 //中間ゲート
@@ -4475,7 +4484,7 @@ if (atype[t]==133){msoubi=4;}
         nokori = 2;
 
         fast = 0;
-        trap = 0;
+        trap = 1;
         tyuukan = 0;
     }
 
@@ -4486,9 +4495,13 @@ if (atype[t]==133){msoubi=4;}
 
 //30-fps
     xx[0] = 30;
+    doublefps = 0;
     if (CheckHitKey(KEY_INPUT_SPACE) == 1) {
     xx[0] = 60;
+    doublefps = 1;
+    if (doublefile == 0) {std::cout << "6\n"; doublefile = 1;};
     }
+    if (doublefps == 0 && doublefile == 1) {std::cout << "3\n"; doublefile = 0;};
     wait2(stime, long (GetNowCount()), 1000 / xx[0]);
 
 //wait(20);
