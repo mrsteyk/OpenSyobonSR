@@ -143,7 +143,7 @@ int actaon[7];
 //メッセージ
 int mmsgtm, mmsgtype;
 
-int mascrollmax = 21000;	//9000
+int mascrollmax = 21000;    //9000
 
 
 
@@ -164,7 +164,7 @@ void setfont(int x, int y);
 
 //効果を持たないグラ
 void eyobi(int xa, int xb, int xc, int xd, int xe, int xf, int xnobia,
-	   int xnobib, int xgtype, int xtm);
+       int xnobib, int xgtype, int xtm);
 #define emax 201
 int eco;
 int ea[emax], eb[emax], enobia[emax], enobib[emax], ec[emax], ed[emax];
@@ -175,7 +175,7 @@ int egtype[emax];
 
 //敵キャラ
 void ayobi(int xa, int xb, int xc, int xd, int xnotm, int xtype,
-	   int xxtype);
+       int xxtype);
 void tekizimen();
 #define amax 24
 int aco;

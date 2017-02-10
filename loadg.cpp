@@ -14,11 +14,11 @@ void loadg(void)
 {
 
     for (t = 0; t < 51; t++) {
-	mgrap[t] = 0;
+    mgrap[t] = 0;
     }
     for (int i = 0; i < 161; i++)
-	for (int j = 0; j < 8; j++)
-	    grap[i][j] = NULL;
+    for (int j = 0; j < 8; j++)
+        grap[i][j] = NULL;
 
 /*
 for (t=0;t<161;t++){
@@ -67,10 +67,10 @@ grap[t][tt]=0;
     x1 = 1;
 //ブロック読み込み
     for (t = 0; t <= 6; t++) {
-	grap[t][x1] = DerivationGraph(33 * t, 0, 30, 30, mgrap[x1]);
-	grap[t + 30][x1] = DerivationGraph(33 * t, 33, 30, 30, mgrap[x1]);
-	grap[t + 60][x1] = DerivationGraph(33 * t, 66, 30, 30, mgrap[x1]);
-	grap[t + 90][x1] = DerivationGraph(33 * t, 99, 30, 30, mgrap[x1]);
+    grap[t][x1] = DerivationGraph(33 * t, 0, 30, 30, mgrap[x1]);
+    grap[t + 30][x1] = DerivationGraph(33 * t, 33, 30, 30, mgrap[x1]);
+    grap[t + 60][x1] = DerivationGraph(33 * t, 66, 30, 30, mgrap[x1]);
+    grap[t + 90][x1] = DerivationGraph(33 * t, 99, 30, 30, mgrap[x1]);
     }
     grap[8][x1] = DerivationGraph(33 * 7, 0, 30, 30, mgrap[x1]);
     grap[16][x1] = DerivationGraph(33 * 6, 0, 24, 27, mgrap[2]);
@@ -81,7 +81,7 @@ grap[t][tt]=0;
 //ブロック読み込み2
     x1 = 5;
     for (t = 0; t <= 6; t++) {
-	grap[t][x1] = DerivationGraph(33 * t, 0, 30, 30, mgrap[x1]);
+    grap[t][x1] = DerivationGraph(33 * t, 0, 30, 30, mgrap[x1]);
     }
     grap[10][5] = DerivationGraph(33 * 1, 33, 30, 30, mgrap[x1]);
     grap[11][5] = DerivationGraph(33 * 2, 33, 30, 30, mgrap[x1]);
@@ -92,7 +92,7 @@ grap[t][tt]=0;
 //アイテム読み込み
     x1 = 2;
     for (t = 0; t <= 5; t++) {
-	grap[t][x1] = DerivationGraph(33 * t, 0, 30, 30, mgrap[x1]);
+    grap[t][x1] = DerivationGraph(33 * t, 0, 30, 30, mgrap[x1]);
     }
 
 //敵キャラ読み込み
@@ -169,16 +169,16 @@ grap[t][tt]=0;
 //int GrHandle=0;
     x1 = 3;
     for (t = 0; t <= 140; t++) {
-	if (grap[t][x1]) {
-	    anx[t] = grap[t][x1]->w;
-	    any[t] = grap[t][x1]->h;
+    if (grap[t][x1]) {
+        anx[t] = grap[t][x1]->w;
+        any[t] = grap[t][x1]->h;
 //GetGraphSize(grap[t][x1] ,&anx[t] ,&any[t]);
-	    anx[t] *= 100;
-	    any[t] *= 100;
-	} else {
-	    anx[t] = 0;
-	    any[t] = 0;
-	}
+        anx[t] *= 100;
+        any[t] *= 100;
+    } else {
+        anx[t] = 0;
+        any[t] = 0;
+    }
     }
     anx[79] = 120 * 100;
     any[79] = 15 * 100;
@@ -188,15 +188,15 @@ grap[t][tt]=0;
 //背景サイズ収得
     x1 = 4;
     for (t = 0; t < 40; t++) {
-	if (grap[t][x1]) {
-	    ne[t] = grap[t][x1]->w;
-	    nf[t] = grap[t][x1]->h;
+    if (grap[t][x1]) {
+        ne[t] = grap[t][x1]->w;
+        nf[t] = grap[t][x1]->h;
 //GetGraphSize(grap[t][x1] ,&ne[t] ,&nf[t]);
 //ne[t]*=100;nf[t]*=100;
-	} else {
-	    ne[t] = 0;
-	    nf[t] = 0;
-	}
+    } else {
+        ne[t] = 0;
+        nf[t] = 0;
+    }
     }
 
 /*
