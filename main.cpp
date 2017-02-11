@@ -4498,7 +4498,10 @@ if (atype[t]==133){msoubi=4;}
         nokori = 2;
 
         fast = 0;
+        trap = 0;
+        #ifdef traps
         trap = 1;
+        #endif
         tyuukan = 0;
     }
 
@@ -4509,6 +4512,7 @@ if (atype[t]==133){msoubi=4;}
 
 //30-fps
     xx[0] = 30;
+    #ifdef spaceaccel
     doublefps = 0;
     if (CheckHitKey(KEY_INPUT_SPACE) == 1) {
     xx[0] = 60;
@@ -4516,6 +4520,7 @@ if (atype[t]==133){msoubi=4;}
     if (doublefile == 0) {std::cout << "6\n"; doublefile = 1;};
     }
     if (doublefps == 0 && doublefile == 1) {std::cout << "3\n"; doublefile = 0;};
+    #endif
     wait2(stime, long (GetNowCount()), 1000 / xx[0]);
     if (count_frames) frame_count++;
 
