@@ -1109,6 +1109,7 @@ void rpaint()
         started = std::chrono::high_resolution_clock::now();
         didstart = 0;
         preventrestart = 1;
+        count_frames = 1;
     }
 
     }
@@ -1245,6 +1246,7 @@ void Mainprogram()
     if (CheckHitKey(KEY_INPUT_F1) == 1) {
         mainZ = 100;
         preventrestart = 0;
+        count_frames = 0;
     }
 //if (CheckHitKey(KEY_INPUT_Q)==1){mkeytm=0;}
     if (CheckHitKey(KEY_INPUT_O) == 1) {
@@ -2723,6 +2725,7 @@ if (mtm==250)end();
                 mtm = 0;
                 ended = std::chrono::high_resolution_clock::now();
                 std::cout << (std::chrono::duration_cast<std::chrono::duration<double>>(ended - started)).count() << std::endl;
+                std::cout << double(frame_count/30);
                 ot(oto[16]);
                 }
 
@@ -4513,6 +4516,7 @@ if (atype[t]==133){msoubi=4;}
     }
     if (doublefps == 0 && doublefile == 1) {std::cout << "3\n"; doublefile = 0;};
     wait2(stime, long (GetNowCount()), 1000 / xx[0]);
+    if (count_frames) frame_count++;
 
 //wait(20);
 

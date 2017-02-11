@@ -251,5 +251,6 @@ long stimeZ;
 
 //Steyk's part now
 int complete = 0, doublefps = 0, doublefile = 0;
+long long int frame_count = 0;
 std::chrono::high_resolution_clock::time_point started, ended;
-bool didstart = 0, preventrestart = 0;
+bool didstart = 0, preventrestart = 0, count_frames = 0;
