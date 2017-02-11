@@ -8,6 +8,7 @@ using namespace std;
 //Steyk's part
 #define spaceaccel
 #define traps
+#undef spaceaccel
 
 void loadg();
 void parseArgs(int argc, char* argv[]);
@@ -255,7 +256,7 @@ long stimeZ;
 
 //Steyk's part now
 int complete = 0;
-#ifdef
+#ifdef spaceaccel
 int doublefps = 0, doublefile = 0;
 #endif
 long long int frame_count = 0;
