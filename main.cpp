@@ -1247,6 +1247,7 @@ void Mainprogram()
         mainZ = 100;
         preventrestart = 0;
         count_frames = 0;
+        frame_count = 0;
     }
 //if (CheckHitKey(KEY_INPUT_Q)==1){mkeytm=0;}
     if (CheckHitKey(KEY_INPUT_O) == 1) {
