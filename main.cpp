@@ -1105,6 +1105,11 @@ void rpaint()
     drawimage(grap[0][0], 190, 190);
     DrawFormatString(230, 200, GetColor(255, 255, 255), " × %d",
              nokori);
+    if (didstart == 1 && preventrestart == 0) {
+        started = std::chrono::high_resolution_clock::now();
+        didstart = 0;
+        preventrestart = 1;
+    }
 
     }
 //タイトル
@@ -1239,6 +1244,7 @@ void Mainprogram()
 //if (CheckHitKey(KEY_INPUT_F1)==1){end();}
     if (CheckHitKey(KEY_INPUT_F1) == 1) {
         mainZ = 100;
+        preventrestart = 0;
     }
 //if (CheckHitKey(KEY_INPUT_Q)==1){mkeytm=0;}
     if (CheckHitKey(KEY_INPUT_O) == 1) {
@@ -2084,6 +2090,7 @@ if (mtm==250)end();
                 Mix_HaltMusic();
                 mtype = 301;
                 mtm = 0;
+                
                 ot(oto[16]);
 
             }
@@ -2714,6 +2721,8 @@ if (mtm==250)end();
                 Mix_HaltMusic();
                 mtype = 302;
                 mtm = 0;
+                ended = std::chrono::high_resolution_clock::now();
+                std::cout << (std::chrono::duration_cast<std::chrono::duration<double>>(ended - started)).count() << std::endl;
                 ot(oto[16]);
                 }
 
@@ -2779,7 +2788,7 @@ if (mtm==250)end();
                 mtype = 300;
                 mtm = 0;
                 ma = sa[t] - fx - 2000;
-                std::cout << "1";
+                std::cout << "1\n";
                 complete = 1;
                 ot(oto[11]);
             }
@@ -4471,6 +4480,7 @@ if (atype[t]==133){msoubi=4;}
 //if (CheckHitKeyAll() == 0){end();}
     if (CheckHitKey(KEY_INPUT_RETURN) == 1) {
         xx[0] = 1;
+        didstart = 1;
     }
 //if (CheckHitKey(KEY_INPUT_SPACE)==1){xx[0]=1;}
     if (CheckHitKey(KEY_INPUT_Z) == 1) {
